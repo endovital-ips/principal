@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de Nosotros - Clínica Endovital</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+        .header {
+            background-color: rgb(67, 126, 179);
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 20px; /* Añade espacio entre el logo y el botón */
+        }
+        .logo img {
+            width: auto;
+            height: 1.5cm; /* Limita la altura a 1.5 cm */
+            max-width: 1.5cm; /* Limita el ancho a 1.5 cm */
+        }
+        .logo span {
+            margin-left: 10px;
+            font-size: 1.2rem;
+            line-height: 1.5cm;
+        }
+        .header .button {
+            background-color: rgb(170, 41, 35);
+            padding: 5px 15px;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(8px);
+            opacity: 0.6;
+        }
+        .main-section {
+            margin-top: 80px;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .main-section h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: white;
+            color: black;
+            border-radius: 10px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .service-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background-color: white;
+        }
+        .service-card img {
+            flex: 0 0 40%;
+            max-width: 40%;
+            border-radius: 10px;
+        }
+        .service-card div {
+            flex: 1;
+        }
+        .service-card h2 {
+            margin-top: 0;
+        }
+        .footer {
+            background-color: rgb(67, 126, 179); /* Cambiado a azul */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="video-background">
+        <video autoplay loop muted>
+            <source src="videoacercade.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <header class="header">
+        <div class="logo">
+            <a href="pagina.principal.html" style="text-decoration: none; color: white; display: flex; align-items: center;">
+                <img src="logooooooooo.jpeg" alt="Clínica Endovital Logo"> <!-- Replace with actual logo path -->
+                <span>Endovital IPS</span>
+            </a>
+            <a href="pagina.principal.html" class="button">Inicio</a>
+        </div>
+    </header>
+
+    <main class="main-section">
+        <h1>Acerca de Nosotros</h1>
+
+        <div class="service-card">
+            <img src="12.png.png" alt="Quiénes Somos"> <!-- Replace with actual image path -->
+            <div>
+                <h2>¿Quiénes Somos?</h2>
+                <p>Contamos con la colaboración de médicos especializados en endocrinología, para un diagnóstico preciso y tratamiento eficaz de los trastornos hormonales que padece el cuerpo humano. Además, nuestros médicos se encuentran certificados internacionalmente por el Centro Estratégico para la Educación Profesional sobre Obesidad 
+                    <a href="https://www.worldobesity.org/scope " target="_blank" style="color: #007bff; text-decoration: none;">
+                       (SCOPE)
+                    </a>, con los conocimientos y habilidades necesarias para brindar el mejor apoyo posible a los pacientes con obesidad, sobrepeso y sus complicaciones.</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="13.png (1).png" alt="Misión"> <!-- Replace with actual image path -->
+            <div>
+                <h2>Misión</h2>
+                <p>Somos una Institución Prestadora de Servicios de Salud enfocada en la
+                    prestación de servicios de salud de medicina, en el contexto de la consulta
+                    externa, para prevenir la enfermedad, promover y recuperar la salud. Estamos
+                    comprometidos en prestar servicios de salud seguros y humanizados,
+                    generando sostenibilidad financiera.</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="14.png.png" alt="Visión"> <!-- Replace with actual image path -->
+            <div>
+                <h2>Visión</h2>
+                <p>En el 2030 seremos una institución que generará confianza en la prestación del
+                    servicio de salud en el departamento gracias a nuestra alta calidad en el
+                    servicio, contribuyendo al bienestar de nuestra sociedad y mejorando
+                    continuamente para perseguir la mayor eficiencia y efectividad clínica.</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="15.png.png" alt="Valores"> <!-- Replace with actual image path -->
+            <div>
+                <h2>Valores</h2>
+                <ul>
+                    <li><strong>Confianza:</strong> Relación entre paciente y personal médico basada en la seguridad y credibilidad del servicio prestado.</li>
+                    <li><strong>Profesionalismo:</strong> Desempeño ético y competente, cumpliendo con estándares clínicos en beneficio del paciente.</li>
+                    <li><strong>Motivación:</strong> Impulso del equipo para ofrecer atención de calidad, con enfoque en la mejora continua.</li>
+                    <li><strong>Tranquilidad:</strong> Estado que transmite la IPS al paciente mediante un entorno seguro y confiable en cada consulta.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025, Clínica Endovital IPS SAS | Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>

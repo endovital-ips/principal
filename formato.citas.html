@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario - Clínica Endovital</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(10px);
+            opacity: 0.7;
+        }
+        .header {
+            background-color: rgba(67, 126, 179, 0.9);
+            color: white;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .header .logo {
+            display: flex;
+            align-items: center;
+        }
+        .header .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .header .logo span {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .header a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            background-color: rgb(170, 41, 35);
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+        .main-section {
+            margin-top: 80px;
+            padding: 20px;
+            text-align: center;
+            padding-bottom: 100px;
+            color: white;
+            position: relative;
+        }
+        .main-section .title-container {
+            background-color: rgba(170, 41, 35, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(170, 41, 35, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .form-container input, .form-container select, .form-container textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: rgb(67, 126, 179);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #355a7b;
+        }
+        .footer {
+            background-color: rgba(67, 126, 179, 0.9);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="videoformato.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
+    </div>
+
+    <header class="header">
+        <div class="logo">
+            <img src="logooooooooo.jpeg" alt="Clínica Endovital"> <!-- Reemplaza "logo.png" con la ruta del logo -->
+            <span>Endovital IPS</span>
+            <a href="pagina.principal.html">Inicio</a>
+        </div>
+    </header>
+
+    <main class="main-section">
+        <div class="title-container">
+            <h1>Formulario de Información Básica</h1>
+            <p>Por favor, completa los siguientes campos para ayudarnos a atenderte mejor.</p>
+        </div>
+
+        <div class="form-container">
+            <h2>Datos del Paciente</h2>
+            <form action="mailto:Pacientesendovital@gmail.com, Gerenciaendovital@gmail.com" method="POST" enctype="text/plain">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo" required>
+
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" placeholder="Ingresa tu edad" required>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ingresa tu número de teléfono" required>
+
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" placeholder="Ingresa tu correo electrónico" required>
+
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" placeholder="Ingresa tu dirección" required>
+
+                <label for="servicio">Portafolio de servicios:</label>
+                <select id="servicio" name="servicio" required onchange="showSubservices(this.value)">
+                    <option value="">Selecciona una opción</option>
+                    <option value="endocrinologia">Consulta especializada en endocrinología, diabetes y metabolismo</option>
+                    <option value="obesidad">Consulta de obesidad y sobrepeso</option>
+                    <option value="tratamiento_peso">Planes de tratamiento personalizado para la pérdida de peso</option>
+                    <option value="medicina_interna">Consulta especializada en medicina interna</option>
+                    <option value="medicina_general">Consulta de medicina general</option>
+                    <option value="apoyos_diagnosticos">Apoyos diagnósticos</option>
+                </select>
+
+                <div id="subservicios" style="display:none; margin-top: 20px;">
+                    <label for="subservicio">Consultas, planes y apoyos diagnósticos:</label>
+                    <select id="subservicio" name="subservicio">
+                        <option value="">Selecciona una opción</option>
+                    </select>
+                </div>
+
+                <label for="comentarios">Comentarios adicionales:</label>
+                <textarea id="comentarios" name="comentarios" rows="4" placeholder="Escribe aquí cualquier comentario o aclaración"></textarea>
+
+                <button type="submit">Enviar Información</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025, Clínica Endovital IPS SAS | Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        const subservices = {
+            endocrinologia: [
+                "Diabetes y obesidad",
+                "Osteoporosis y trastornos del calcio",
+                "Enfermedades tiroideas",
+                "Menopausia",
+                "Síndrome de ovario poliquístico",
+                "Tumores de glándulas endocrinas",
+                "Disfunción sexual y fertilidad",
+                "Terapia de reemplazo hormonal"
+            ],
+            obesidad: [
+                "Abordaje integral en torno al exceso de peso",
+                "Evaluación de factores asociados al sobrepeso y la obesidad",
+                "Análisis de composición corporal",
+                "Objetivos claros de pérdida de peso",
+                "Evaluación y manejo de las complicaciones mecánicas y metabólicas de la obesidad"
+            ],
+            tratamiento_peso: [
+                "Tratamientos médicos para la pérdida de peso",
+                "Planes nutricionales personalizados",
+                "Prescripción de ejercicio físico",
+                "Cronobiología y sueño",
+                "Hábitos de vida saludable"
+            ],
+            medicina_interna: [
+                "Consulta medicina interna"
+            ],
+            medicina_general: [
+                "Consulta medicina general"
+            ],
+            apoyos_diagnosticos: [
+                "Impedanciometría eléctrica y análisis de composición corporal",
+                "Monitoreo continuo de glucosa",
+                "Electrocardiograma"
+            ]
+        };
+
+        function showSubservices(service) {
+            const subserviciosDiv = document.getElementById("subservicios");
+            const subservicioSelect = document.getElementById("subservicio");
+
+            if (service && subservices[service]) {
+                subservicioSelect.innerHTML = subservices[service]
+                    .map(sub => `<option value="${sub}">${sub}</option>`) 
+                    .join('');
+                subserviciosDiv.style.display = "block";
+            } else {
+                subserviciosDiv.style.display = "none";
+                subservicioSelect.innerHTML = '<option value="">Selecciona una opción</option>';
+            }
+        }
+    </script>
+</body>
+</html>
