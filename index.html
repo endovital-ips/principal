@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Endovital</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Add this file to style the page -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: rgb(67, 126, 179);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img { max-height: 60px;
+            margin-right: 10px;
+        }
+        .main-image {
+            position: relative;
+            text-align: center;
+            color: white;
+            margin-top: 80px; /* Adjusted to ensure it is not overlapped by the header */
+        }
+        .main-image img {
+            width: 100%;
+            height: auto;
+        }
+        .main-image .overlay-text {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .main-section {
+            margin-top: 80px; /* Space for the fixed header */
+            padding: 20px;
+            text-align: center;
+        }
+        .cta-container {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            background-color: #f9f9f9;
+        }
+        .cta-buttons {
+            margin: 20px 0;
+        }
+        .cta-buttons a {
+            text-decoration: none;
+            color: white;
+            padding: 15px 30px;
+            background-color: rgb(170, 41, 35); /* Changed to red */
+            margin: 20px auto;
+            display: block;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        .cta-buttons a:hover {
+            background-color: #a22c2c;
+        }
+        .cta-buttons p {
+            margin: 20px 0;
+            font-size: 1.1rem;
+            color: #333;
+        }
+        .secondary-image {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .secondary-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .footer {
+            background-color: rgb(67, 126, 179); /* Changed to blue */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .footer .contact-info {
+            text-align: center;
+            margin: 0;
+        }
+        .footer .social-links {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        .footer .social-links a {
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+        .footer .social-links img {
+            margin-right: 5px;
+        }
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            border-radius: 50%;
+            padding: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .whatsapp-button img {
+            width: 40px;
+            height: 40px;
+        }
+        /* Custom size controls for logos */
+        .facebook-logo {
+            width: 38px;
+            height: 38px;
+        }
+        .instagram-logo {
+            width: 20px;
+            height: 20px;
+        }
+        .gmail-logo {
+            width: 40px;
+            height: 30px;
+        }
+
+        /* Responsive menu styles */
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+        }
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+        }
+        .menu {
+            display: flex;
+            gap: 10px;
+        }
+        .menu a:last-child {
+            margin-right: 20px; /* Add margin to move it away from the edge */
+        }
+        @media screen and (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                background-color: rgb(67, 126, 179);
+                position: absolute;
+                top: 60px;
+                  right: 4 0px;
+                padding: 10px;
+                border-radius: 5px;
+            }
+            .menu.active {
+                display: flex;
+            }
+            .menu-icon {
+                display: block;
+                position: absolute;
+                top: 10px;
+                right: 50px;
+                transform: translateX(10%);
+            }
+            .main-image {
+                margin-top: 80px; /* Additional space for smaller screens */
+            }
+            .main-image .overlay-text {
+                background-color: rgba(0, 0, 0, 0.3);
+                padding: 10px;
+                font-size: 1rem;
+                font-weight: bold;
+                border-radius: 5px;
+            }
+            .main-image .overlay-text h1 {
+                font-size: 1.5rem;
+            }
+            .main-image .overlay-text p {
+                display: none; /* Hide the secondary text */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo" style="display: flex; align-items: center; gap: 15px;">
+            <img src="logooooooooo.jpeg" alt="Clínica Endovital Logo"> <!-- Replace with actual logo path -->
+            <span>Endovital IPS SAS</span>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu">
+            <a href="como.llegar.html" style="background-color: rgb(170, 41, 35); color: white; text-decoration: none; padding: 5px 10px; border-radius: 10px;">¿Cómo llegar?</a>
+            <a href="https://portalpacientes.saludtools.com/sign-in?hash=vGxkePHKDjlN&origin=3" style="background-color: rgb(170, 41, 35); color: white; text-decoration: none; padding: 5px 10px; border-radius: 10px;">Portal Pacientes</a>
+            <a href="nuestros.procedimientos.html" style="background-color: rgb(170, 41, 35); color: white; text-decoration: none; padding: 5px 10px; border-radius: 10px;">Nuestros Procedimientos</a>
+            <a href="acerca.de.nosotros.html" style="background-color: rgb(170, 41, 35); color: white; text-decoration: none; padding: 5px 10px; border-radius: 10px;">Acerca de Nosotros</a>
+        </div>
+    </header>
+
+    <div class="main-image">
+        <img src="porteriaendo.jpeg" alt="Clínica Endovital"> <!-- Replace with the actual image path -->
+        <div class="overlay-text">
+            <h1>Bienvenido a Clínica Endovital</h1>
+            <p>Transformando vidas con atención integral y personalizada</p>
+        </div>
+    </div>
+
+    <main class="main-section">
+        <h1>Trabajamos por tu bienestar</h1>
+        <div class="cta-container">
+            <p>Más que un procedimiento médico, nuestro objetivo es ayudarte a alcanzar un bienestar completo, tanto físico como mental.</p>
+            <div class="cta-buttons">
+                <a href="formato.citas.html">Quiero Más Información</a>
+            </div>
+            <div class="secondary-image">
+                <img src="porrteria22222.jpg" alt="Clínica Endovital">
+                <p style="margin-top: 10px; font-size: 1rem;">"Transforma tu vida con nosotros."</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="contact-info">
+            <p><a href="POLÍTICA DE TRATAMIENTO DE DATOS PERSONALES - ENDOVITAL IPS. Elab. Equipolegal.pdf" style="text-decoration: underline; color: white;" target="_blank">Tratamiento de Datos Personales</a></p>
+        </div>
+        <div class="contact-info">
+            <p>Edificio Dalí, Local 4</p>
+            <p>Calle 15 # 3 - 23 – Pitalito, Huila</p>
+            <p>&copy; Endovital IPS SAS, 2025</p>
+        </div>
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/1EBr5jgNjC/?mibextid=wwXIfr" target="_blank">
+                <img src="facebook_logo_matched_size.png" alt="Facebook" class="facebook-logo">Facebook
+            </a>
+            <a href="https://www.instagram.com/endovitalcolombia/" target="_blank">
+                <img src="Instagram_logo_2022.svg.png" alt="Instagram" class="instagram-logo">Instagram
+            </a>
+            <a href="mailto:Pacientesendovital@gmail.com, Gerenciaendovital@gmail.com">
+                <img src="gmail_logo_no_bg.png" alt="Gmail" class="gmail-logo">Gmail
+            </a>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/573114660470" class="whatsapp-button" target="_blank">
+        <img src="WhatsApp.svg.webp" alt="WhatsApp"> <!-- Replace with actual WhatsApp icon path -->
+    </a>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
