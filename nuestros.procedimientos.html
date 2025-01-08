@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procedimientos - Clínica Endovital</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: auto;
+        }
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: blur(10px) brightness(0.7);
+        }
+        .header {
+            background-color: rgb(67, 126, 179); /* Cambiado a color sólido */
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 20px; /* Añade espacio entre el logo y el botón */
+        }
+        .logo img {
+            width: auto;
+            height: 1.5cm; /* Limita la altura a 1.5 cm */
+            max-width: 1.5cm; /* Limita el ancho a 1.5 cm */
+        }
+        .logo span {
+            margin-left: 10px;
+            font-size: 1.2rem;
+            line-height: 1.5cm;
+        }
+        .header .button {
+            background-color: rgb(170, 41, 35);
+            padding: 5px 15px;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .main-section {
+            margin-top: 80px;
+            padding: 20px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .main-section h1 {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: black;
+            margin-bottom: 40px;
+        }
+        .service-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center; /* Centra verticalmente */
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            color: black;
+        }
+        .service-card img {
+            flex: 0 0 40%;
+            max-width: 40%;
+            border-radius: 10px;
+        }
+        .service-card div {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centra verticalmente el texto */
+        }
+        .service-card h2 {
+            margin-top: 0;
+        }
+        .footer {
+            background-color: rgb(67, 126, 179); /* Cambiado a azul sólido */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <video class="background-video" autoplay loop muted>
+        <source src="videonu.mp4" type="video/mp4"> <!-- Replace with actual video path -->
+        Your browser does not support the video tag.
+    </video>
+
+    <header class="header">
+        <div class="logo">
+            <a href="pagina.principal.html" style="text-decoration: none; color: white; display: flex; align-items: center;">
+                <img src="logooooooooo.jpeg" alt="Clínica Endovital Logo"> <!-- Replace with actual logo path -->
+                <span>Endovital IPS</span>
+            </a>
+            <a href="pagina.principal.html" class="button">Inicio</a>
+        </div>
+    </header>
+
+    <main class="main-section">
+        <h1>Nuestros Servicios</h1>
+
+        <div class="service-card">
+            <img src="6.png" alt="Endocrinología"> <!-- Replace with actual image path -->
+            <div>
+                <h2>Consulta especializada en endocrinología, diabetes y metabolismo</h2>
+                <ul>
+                    <li>Diabetes y obesidad</li>
+                    <li>Osteoporosis y trastornos del calcio</li>
+                    <li>Enfermedades tiroideas</li>
+                    <li>Menopausia</li>
+                    <li>Síndrome de ovario poliquístico</li>
+                    <li>Tumores de glándulas endocrinas</li>
+                    <li>Disfunción sexual y fertilidad</li>
+                    <li>Terapia de reemplazo hormonal</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="7.png" alt="Obesidad"> <!-- Replace with actual image path -->
+            <div>
+                <h2>Consulta de obesidad y sobrepeso</h2>
+                <ul>
+                    <li>Abordaje integral en torno al exceso de peso</li>
+                    <li>Evaluación de factores asociados al sobrepeso y la obesidad</li>
+                    <li>Análisis de composición corporal</li>
+                    <li>Objetivos claros de pérdida de peso</li>
+                    <li>Evaluación y manejo de las complicaciones mecánicas y metabólicas de la obesidad</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="8.png" alt="Tratamiento personalizado"> <!-- Replace with actual image path -->
+            <div>
+                <h2>Planes de tratamiento personalizado para la pérdida de peso</h2>
+                <ul>
+                    <li>Tratamientos médicos para la pérdida de peso</li>
+                    <li>Planes nutricionales personalizados</li>
+                    <li>Prescripción de ejercicio físico</li>
+                    <li>Cronobiología y sueño</li>
+                    <li>Hábitos de vida saludable</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="9.png" alt="Medicina interna"> <!-- Replace with actual image path -->
+            <div>
+                <h2>Consulta especializada en medicina interna</h2>
+                <p>Para acompañamiento integral de nuestros pacientes, contamos con orientación y consulta especializada en medicina interna, con un enfoque en enfermedades cardiovasculares, gastrointestinales, trastornos endocrinos y metabólicos.</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="PERFILES (1).png" alt="Medicina general"> <!-- Replace with actual image path -->
+            <div>
+                <h2>Consulta de medicina general</h2>
+                <p>Contamos con consulta médica personalizada, con diagnósticos precisos y tratamientos basados en evidencia científica. Brindamos seguimiento adaptado a las necesidades de cada paciente.</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="10.png" alt="Apoyos diagnósticos"> <!-- Replace with actual image path -->
+            <div>
+                <h2>Apoyos diagnósticos</h2>
+                <ul>
+                    <li>Impedanciometría eléctrica y análisis de composición corporal</li>
+                    <li>Monitoreo continuo de glucosa</li>
+                    <li>Electrocardiograma</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025, Clínica Endovital IPS SAS | Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>
